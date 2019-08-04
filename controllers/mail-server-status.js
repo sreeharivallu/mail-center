@@ -6,7 +6,7 @@ var activeMailServer = '';
 var setActiveMailServer = function(){
     retrieveActiveMailServer()
     .then(res => {
-        console.log(res);
+        console.log(res);        
         activeMailServer = res
     })
     .catch(err => console.log('Error is getting active mail server', err));
@@ -33,9 +33,6 @@ async function retrieveActiveMailServer(){
     }catch(err){
         return err;
     }
-    
-
-    
 }
 
 module.exports = {getActiveMailServer,

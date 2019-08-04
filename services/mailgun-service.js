@@ -6,7 +6,7 @@ var sendEmail = async function(emailDetails){
     try{
         const data = {
             from: 'mailgun@' + config.mailgun_domain,
-            to: 'sree.bobby4u@gmail.com',
+            to: emailDetails.to,
             cc: emailDetails.cc,
             bcc: emailDetails.bcc,
             subject: emailDetails.subject,

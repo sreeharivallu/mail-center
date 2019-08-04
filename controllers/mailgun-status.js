@@ -6,7 +6,7 @@ var checkStatus= async function(){
     try{
         const data = {
             from: 'mailgun@' + config.mailgun_domain,
-            to: 'sree.bobby4u@gmail.com',
+            to: 'sreeharitest1@mailinator.com',
             subject: 'ping mailgun',
             text: 'How are you mailgun?',
             'o:testmode': 'True'
