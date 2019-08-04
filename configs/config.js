@@ -9,12 +9,4 @@ var Config = {
     sendgrid_base_url: 'https://api.sendgrid.com/v3/mail'
 }
 
-/*var testConfig = {    
-    port: '3000',
-    mailgun_apikey: 'b61506c86eb5b65266ff309cea53d217-f877bd7a-21f4cb9e',
-    mailgun_base_url: 'https://api.mailgun.net/v3/sandbox47fe715531c543f98035474411ad0a53.mailgun.org',
-    sendgrid_apikey: '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',
-    sendgrid_base_url: 'https://api.sendgrid.com/v3/mail'
-}*/
-
 module.exports = Config;
