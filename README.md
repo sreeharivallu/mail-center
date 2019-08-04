@@ -18,8 +18,8 @@ npm run start fails, if the mentioned environment variables are not set
 4. npm run test (or) mocha test/**/*.test.js
 
 # APIs 
-
 . Method: POST
+
 . Endpoint: /email
 
 # Input
