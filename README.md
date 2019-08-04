@@ -22,7 +22,7 @@ npm run start fails, if the mentioned environment variables are not set
 
 . Endpoint: /email
 
-# Input
+. Input
 
 {
  "to" : "sreeharitest1@mailinator.com, sreeharitest2@mailinator.com",
