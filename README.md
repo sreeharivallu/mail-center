@@ -1,19 +1,21 @@
 # Siteminder Email invitation code challenge
+Task: To create a service that accepts necessary information and send emails using email providers like mailgun and sendgrid.
 
 # How to Run
 
-1. export mailgun_apikey=XXXXXXXX
-2. export mailgun_domain=XXXXXXXX
-3. export sendgrid_apikey=XXXXXXXX
-4. npm run start (or) node app.js
+1. npm install
+2. export mailgun_apikey=XXXXXXXX
+3. export mailgun_domain=XXXXXXXX
+4. export sendgrid_apikey=XXXXXXXX
+5. npm run start (or) node app.js
 
+npm run start fails, if the mentioned environment variables are not set
 
 # test
 1. export mailgun_apikey=XXXXXXXX
 2. export mailgun_domain=XXXXXXXX
 3. export sendgrid_apikey=XXXXXXXX
 4. npm run test (or) mocha test/**/*.test.js
-
 
 # APIs 
 
@@ -33,13 +35,11 @@
 # Success Response:
 Status 200
 {   
-    
     "success": true
 }
 
 # Possible failure Responses
 Status 400
-
 1. {
       "Reason" : "Missing Mandatory parameters"
    }
@@ -77,6 +77,15 @@ https://my-mail-center.herokuapp.com/email
 Heroku deployment used sandbox mailgun and sendgrid accounts. Hence, mail can only be send to specific emails. Below are the listed.
 
 1. sreeharitest1@mailinator.com
-2. sreeharitest1@mailinator.com
-3. sreeharitest1@mailinator.com
-4. sreeharitest1@mailinator.com
+2. sreeharitest2@mailinator.com
+3. sreeharitest3@mailinator.com
+4. sreeharitest4@mailinator.com
+
+# TODOs
+1. Due to time constraint, test cases are written only for services. More test cases inlcuding negative test cases has to be written. Used Mocha, Chai and Sinon for the written test cases.
+
+2. Just written config for one environment. Improvements has to be done deploy based on environment like Dev, Test and Prod.
+
+3. If both mailgun and sendgrid are not responding, then we are sending error response. Improvement can be done to queue the messages in Kafka or AWS SQS and send to mail service once they are available.
+
+4. From is hardcoded in config as I tested only on sandbox mode.
