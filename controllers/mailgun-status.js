@@ -21,8 +21,7 @@ var checkStatus= async function(){
             url: config.mailgun_base_url + '/messages',
             resolveWithFullResponse: true,
             json : true
-        };
-        console.log(options);
+        };        
         return await rp(options);                        
     }catch(err){
         console.log(err );

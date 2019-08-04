@@ -5,7 +5,7 @@ var sendEmail = async function(emailDetails){
     console.log('sendEmail of mailgun');
     try{
         const data = {
-            from: 'mailgun@' + config.mailgun_domain,
+            from: config.from,
             to: emailDetails.to,
             cc: emailDetails.cc,
             bcc: emailDetails.bcc,

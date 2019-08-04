@@ -8,7 +8,7 @@ var sendEmail = async function(emailDetails){
             "to"     : prepareMailingList(emailDetails.to),
             "cc"     : prepareMailingList(emailDetails.cc),
             "bcc"     : prepareMailingList(emailDetails.bcc) }],
-            "from": {email : 'sree.bobby4u@gmail.com'},
+            "from": {email : config.from},
             "subject": emailDetails.subject,
             "content": [{"type": "text/plain","value": emailDetails.content}]
         };
