@@ -9,7 +9,7 @@ var setActiveMailServer = function(){
         console.log(res);        
         activeMailServer = res
     })
-    .catch(err => console.log('Error is getting active mail server', err));
+    .catch(err => console.log('Error in getting active mail server', err));
 }
 
 var getActiveMailServer = function(){
@@ -24,13 +24,20 @@ async function retrieveActiveMailServer(){
             return 'mailgun';
         }
 
+        if()
+        
         var sendgridStatus = await sendgrid.checkStatus()    
         if(sendgridStatus.statusCode == '200' || sendgridStatus.statusCode == '202'){
             return 'sendgrid';        
         }
 
+        if(mailgunStatus.statusCode == '401' || sendgridStatus.statusCode == '401'){
+            console.log('Invalid credentials details are provided');
+            process.exit();
+        }
+
         return;
-    }catch(err){
+    }catch(err){        
         return err;
     }
 }

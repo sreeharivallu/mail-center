@@ -18,8 +18,7 @@ var checkStatus= async function(){
             method: 'POST',
             headers: { 'Authorization' : "Basic "+ buffer.toString('base64')},
             form: data,
-            url: config.mailgun_base_url + '/messages',
-            resolveWithFullResponse: true,
+            url: config.mailgun_base_url + '/messages',            
             json : true
         };        
         return await rp(options);                        

@@ -31,8 +31,7 @@ var checkStatus = async function(){
             headers: { 'Authorization' : "Bearer "+ config.sendgrid_apikey,
                         'Content-Type': 'application/json' },
             body : data,
-            url: config.sendgrid_base_url + '/send',
-            resolveWithFullResponse: true,
+            url: config.sendgrid_base_url + '/send',            
             json : true
         };
     

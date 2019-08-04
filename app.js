@@ -9,7 +9,6 @@ var mailServerStatus = require('./controllers/mail-server-status');
 const config = require('./configs/config');
 
 const port = process.env.PORT || 3000;
-
 const app = express();
 
 // parse application/x-www-form-urlencoded
@@ -24,7 +23,6 @@ app.get('/', (req, res) => {
 
 app.use('/email', routes);
 
-
 // Ensure required ENV vars are set
 let requiredEnv = [
     'mailgun_apikey', 'mailgun_domain', 'sendgrid_apikey'    
@@ -37,7 +35,8 @@ if (unsetEnv.length > 0) {
 }else{
     app.listen(port, () => {
         console.log(`App listening on port ${port}!`);
-        cron.schedule('15 * * * * *', mailServer.setActiveMailServer).start();
+        mailServer.setActiveMailServer();
+        cron.schedule('15 * * * * *', mailServer.setActiveMailServer);
     })
 }
 
