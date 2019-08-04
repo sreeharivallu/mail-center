@@ -22,7 +22,7 @@ var checkStatus= async function(){
             resolveWithFullResponse: true,
             json : true
         };
-    
+        console.log(options);
         return await rp(options);                        
     }catch(err){
         console.log(err );

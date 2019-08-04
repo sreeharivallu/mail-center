@@ -18,8 +18,7 @@ var sendEmail = async function(emailDetails){
             method: 'POST',
             headers: { 'Authorization' : "Basic "+ buffer.toString('base64')},
             form: data,
-            url: config.mailgun_base_url + '/messages',
-            resolveWithFullResponse: true,
+            url: config.mailgun_base_url + '/messages',            
             json : true
         };    
         

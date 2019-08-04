@@ -29,6 +29,7 @@ describe('test mailgun service', () => {
 
     it('Should send mail from mailgun', () => {
         return mailgun.sendEmail({
+            to: 'sreeharitest1@mailinator.com',
             subject: 'Mocha test',
             content: 'How are you Mocha?'
         })

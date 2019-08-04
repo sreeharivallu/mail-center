@@ -18,7 +18,7 @@ var sendEmail = function(req, res, next){
     }
 
     //For a valid request, get email server
-    let emailServer = mailServer.activeMailServer;
+    let emailServer = mailServer.getActiveMailServer();
 
     //Send Email
     if(emailServer == 'mailgun'){
@@ -27,8 +27,13 @@ var sendEmail = function(req, res, next){
             res.status(200).send({success: true});
         })
         .catch(err => {
-            console.log(err);
-            res.status(500).send({reason: 'Internal server error'});
+            console.log(err);            
+            if(err.statusCode == 400){
+                res.status(400).send({reason: 'This is a sandbox account. Can only send to some emails'});
+            }else{
+                res.status(500).send({reason: 'Unknown error'});
+            }
+            
         })        
     }else if(emailServer == 'sendgrid'){
         sendgrid.sendEmail(req.body)
@@ -37,7 +42,11 @@ var sendEmail = function(req, res, next){
         })
         .catch(err => {
             console.log(err);
-            res.status(500).send(err);
+            if(err.statusCode == 400){
+                res.status(400).send({reason: 'This is a sandbox account. Can only send to some emails'});
+            }else{
+                res.status(500).send({reason: 'Unknown error'});
+            }
         })
     }else{
         res.status(500).send({reason : "Currently all our mail servers are under maintenance"});
@@ -47,7 +56,7 @@ var sendEmail = function(req, res, next){
 function validateRequest(body){
     
     let {to, cc, bcc, subject, content} = body;
-
+   
     if(isParametersMissing(body)){
         return {valid : false, reason: 'missing mandatory parameters'};
     }
