@@ -23,9 +23,7 @@ async function retrieveActiveMailServer(){
         if(mailgunStatus.statusCode == '200'){        
             return 'mailgun';
         }
-
-        if()
-        
+               
         var sendgridStatus = await sendgrid.checkStatus()    
         if(sendgridStatus.statusCode == '200' || sendgridStatus.statusCode == '202'){
             return 'sendgrid';        
