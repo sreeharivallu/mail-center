@@ -11,7 +11,7 @@ describe('test sendgrid service', () => {
 
     const data = { "personalizations": [{
         "to"     : emailDetails.to.split(',').map(to => { return {email : to} }) }],
-        "from": {email : 'sree.bobby4u@gmail.com'},
+        "from": {email : config.from},
         "subject": emailDetails.subject,
         "content": [{"type": "text/plain","value": emailDetails.content}]
     };

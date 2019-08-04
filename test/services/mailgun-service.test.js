@@ -6,7 +6,7 @@ const mailgun = require('../../services/mailgun-service');
 describe('test mailgun service', () => {
 
     const data = {
-        from: 'mailgun@' + config.mailgun_domain,
+        from: config.from,
         to: 'sreeharitest1@mailinator.com',
         subject: 'Mocha test',
         text: 'How are you Mocha?'        
