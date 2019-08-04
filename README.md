@@ -88,4 +88,4 @@ Heroku deployment used sandbox mailgun and sendgrid accounts. Hence, mail can on
 
 3. If both mailgun and sendgrid are not responding, then we are sending error response. Improvement can be done to queue the messages in Kafka or AWS SQS and send to mail service once they are available.
 
-4. From is hardcoded in config as I tested only on sandbox mode.
+4. 'From' mail address is hardcoded in config as I tested only on sandbox mode.
