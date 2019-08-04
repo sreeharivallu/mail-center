@@ -12,9 +12,9 @@ Task: To create a service that accepts necessary information and send emails usi
 npm run start fails, if the mentioned environment variables are not set
 
 # test
-1. export mailgun_apikey=XXXXXXXX
-2. export mailgun_domain=XXXXXXXX
-3. export sendgrid_apikey=XXXXXXXX
+1. export mailgun_apikey=123
+2. export mailgun_domain=123@sreehari.com
+3. export sendgrid_apikey=123
 4. npm run test (or) mocha test/**/*.test.js
 
 # APIs 
