@@ -19,8 +19,8 @@ npm run start fails, if the mentioned environment variables are not set
 
 # APIs 
 
-1. Method: POST
-   Endpoint: /email
+. Method: POST
+. Endpoint: /email
 
 # Input
 
